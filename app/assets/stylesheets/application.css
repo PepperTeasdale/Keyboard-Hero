@@ -13,3 +13,52 @@
  *= require_tree .
  *= require_self
  */
+
+/* RESET */
+
+html, body, ul, li, div {
+  margin: 0;
+  border: 0;
+  padding: 0;
+
+  font: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  color: inherit;
+
+  background: transparent;
+}
+
+ul {
+  list-style: none;
+}
+
+/* CLEAR-FIX */
+
+.group:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.keyboard {
+  width: 600px;
+  border: 5px solid red;
+}
+
+.key {
+  height: 300px;
+  width: 44px;
+  border: 3px solid black;
+  float: left;
+}
+
+.black {
+  height: 150px;
+  background: black;
+  color: white;
+}
+
+.active {
+  background: #ccc;
+}
