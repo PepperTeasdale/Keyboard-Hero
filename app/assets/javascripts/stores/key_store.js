@@ -9,10 +9,6 @@
 
     addNote: function (note) {
       _keys = _keys.concat(note);
-
-      // .filter(function (e, i, arr) {
-      //   return arr.lastIndexOf(e) === i;
-      // });
     },
 
     removeNote: function (note) {
