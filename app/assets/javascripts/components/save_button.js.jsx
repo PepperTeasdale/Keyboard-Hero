@@ -10,16 +10,23 @@ var SaveButton = React.createClass({
 
   save: function (e) {
     e.preventDefault();
-    this.props.save(this.state.title);
+    this.props.track.name = this.state.title;
+    this.props.track.saveTrack();
     this.setState({ title: "" });
   },
 
   render: function () {
     return (
-      <form>
-        <input type="text" value={this.state.title} onChange={this.changeText} />
+      <div>
+        <input
+          type="text"
+          value={this.state.title}
+          onFocus={Listener.turnOff}
+          onBlur={Listener.turnOn}
+          onChange={this.changeText}
+        />
         <button onClick={this.save}>Save</button>
-      </form>
+      </div>
     );
   }
 

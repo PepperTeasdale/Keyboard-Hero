@@ -9,7 +9,7 @@ var Recorder = React.createClass({
 
   addNotes: function () {
     if (this.state.isRecording) {
-      this.state.track.addNotes.bind(this.state.track)(KeyStore.all());
+      this.state.track.addNotes(KeyStore.all());
     }
   },
 
@@ -27,18 +27,13 @@ var Recorder = React.createClass({
     this.state.track.play();
   },
 
-  save: function (title) {
-    this.state.track.name = title;
-    TrackStore.addTrack(this.state.track);
-  },
-
   render: function () {
     return (
       <div>
         <button onClick={this.startRecording}>Start Recording</button>
         <button onClick={this.stopRecording}>Stop Recording</button>
         <button onClick={this.play}>Play</button>
-        <SaveButton save={this.save} />
+        <SaveButton track={this.state.track} />
       </div>
     );
   }

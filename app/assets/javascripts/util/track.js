@@ -15,6 +15,10 @@ Track.prototype.addNotes = function (notes) {
   });
 };
 
+Track.prototype.saveTrack = function () {
+  TrackApiUtil.saveTrack(this);
+};
+
 Track.prototype.stopRecording = function () {
   this.addNotes([]);
 };

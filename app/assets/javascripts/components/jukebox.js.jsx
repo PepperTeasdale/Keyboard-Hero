@@ -11,7 +11,7 @@ var Jukebox = React.createClass({
   render: function () {
     var tracks = this.state.tracks.map(function (track, idx) {
       return (
-        <li key={idx}>
+        <li key={track.id}>
           <TrackPlayer track={track} />
         </li>
       );

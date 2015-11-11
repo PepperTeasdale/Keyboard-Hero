@@ -4,7 +4,7 @@ var TrackPlayer = React.createClass({
   },
 
   delete: function () {
-    TrackStore.destroy(this.props.track);
+    TrackApiUtil.destroy(this.props.track.id);
   },
 
   render: function() {
