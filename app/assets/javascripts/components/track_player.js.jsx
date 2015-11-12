@@ -1,6 +1,6 @@
 var TrackPlayer = React.createClass({
   play: function () {
-    this.props.track.play();
+    Track.prototype.play.call(this.props.track);
   },
 
   delete: function () {

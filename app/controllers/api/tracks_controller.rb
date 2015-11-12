@@ -21,7 +21,6 @@ class Api::TracksController < ApplicationController
   private
 
   def track_params
-    json_params = ActionController::Parameters.new( JSON.parse(request.body.read) )
-    json_params.require(:track).permit(:name, :roll)
+    params.require(:track).permit(:name, :roll)
   end
 end

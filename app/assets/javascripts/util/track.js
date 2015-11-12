@@ -10,7 +10,7 @@ Track.prototype.startRecording = function () {
 
 Track.prototype.addNotes = function (notes) {
   this.roll.push({
-    noteTime: Date.now() - this.startTime,
+    time: Date.now() - this.startTime,
     notes: notes
   });
 };
@@ -33,7 +33,7 @@ Track.prototype.play = function () {
 
   this.intervalId = setInterval(function () {
     if (currentNote < this.roll.length - 1) {
-      if (Date.now() - playbackStartTime >= this.roll[currentNote].noteTime) {
+      if (Date.now() - playbackStartTime >= this.roll[currentNote].time) {
         if (currentNote > 0) {
           KeyActions.keyUnpressed(this.roll[currentNote - 1].notes);
         }

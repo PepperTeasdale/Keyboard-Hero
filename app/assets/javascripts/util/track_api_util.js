@@ -13,13 +13,14 @@ var TrackApiUtil = window.TrackApiUtil = {
   },
 
   saveTrack: function (track) {
-    var trackObj = { name: track.name, roll: track.roll };
-    
+    var trackObj = { track: { name: track.name, roll: JSON.stringify(track.roll) } };
+
+
     $.ajax({
       url: '/api/tracks',
       type: 'POST',
       dataType: 'json',
-      data: { track: trackObj },
+      data: trackObj,
       success: function(track) {
         TrackStore.addTrack(track);
       },
@@ -30,7 +31,7 @@ var TrackApiUtil = window.TrackApiUtil = {
 
   destroy: function (track_id) {
     $.ajax({
-      url: '/api/tracks' + track_id,
+      url: '/api/tracks/' + track_id,
       type: 'DELETE',
       dataType: 'json',
       success: function (track) {
