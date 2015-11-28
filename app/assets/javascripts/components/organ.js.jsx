@@ -3,7 +3,11 @@ var Organ = React.createClass({
     var keys = [];
 
     for (var tone in window.TONES) {
-      keys.push(<li key={tone}><Key noteName={tone} /></li>);
+      keys.push(
+        <li key={tone}>
+          <Key noteName={tone} />
+        </li>
+      );
     }
 
     return (

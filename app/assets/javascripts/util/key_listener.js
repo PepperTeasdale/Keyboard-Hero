@@ -11,8 +11,11 @@
 
   var makeKeyHandler = function (action) {
     return function (event) {
+      if (event.keyCode === 186) {
+        event.keyCode = 59;
+      }
       var keyPress = String.fromCharCode(event.keyCode);
-      var note = KEY_MAPPING[keyPress] + "4";
+      var note = KEY_MAPPING[keyPress];
       KeyActions[action](note);
     };
   };

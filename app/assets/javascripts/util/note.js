@@ -5,7 +5,7 @@
   var Note = window.Note = function (freq) {
     var createOscillator = function (freq) {
       var osc = ctx.createOscillator();
-      osc.type = "sine";
+      osc.type = "square";
       osc.frequency.value = freq;
       osc.detune.value = 0;
       osc.start(ctx.currentTime);

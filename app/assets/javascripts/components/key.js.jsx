@@ -23,7 +23,7 @@ var Key = React.createClass({
   },
 
   render: function () {
-    var className = "key";
+    var className = "";
     if (this.state.active) {
       className += " active";
     }
@@ -33,7 +33,9 @@ var Key = React.createClass({
     }
 
     return (
-      <div className={className}>{this.props.noteName}</div>
+      <div className={"key-container" + className}>
+        <div className={"key" + className}></div>
+      </div>
     );
   }
 });

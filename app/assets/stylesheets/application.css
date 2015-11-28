@@ -42,19 +42,36 @@ ul {
 }
 
 .keyboard {
+  display: block;
+  margin: 100px auto;
   width: 600px;
   border: 5px solid red;
 }
 
-.key {
-  height: 300px;
-  width: 44px;
-  border: 3px solid black;
+.key-container {
+  position: relative;
   float: left;
 }
 
+.key-container.black {
+  position: relative;
+  width: 0px;
+  height: 0px;
+}
+
+.key {
+  height: 300px;
+  width: 58px;
+  border: 1px solid black;
+}
+
 .black {
+  position: absolute;
+  z-index: 1;
   height: 150px;
+  right: -10px;
+  width: 40px;
+  margin: 0 14px;
   background: black;
   color: white;
 }
