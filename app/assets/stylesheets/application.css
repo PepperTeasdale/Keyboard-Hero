@@ -79,3 +79,15 @@ ul {
 .active {
   background: #ccc;
 }
+
+.metronome-body {
+  width: 300px;
+  height: 400px;
+  background: black;
+}
+
+.metronome-outer-dial {
+  width: 250px;
+  height: 250px;
+  border-radius: 250px;
+}
