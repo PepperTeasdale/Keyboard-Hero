@@ -2,8 +2,12 @@
   'use strict';
 
   var CHANGE_EVENT = "change";
+
+  var _oscTypeIdx = 0;
+  var _oscTypes = ["sine", "square", "sawtooth", "triangle"];
+
   var _toneOptions = {
-    oscType: "square",
+    oscType: _oscTypes[_oscTypeIdx],
     gain: 0.3
   };
 
@@ -19,6 +23,12 @@
       _toneOptions.gain = newVal;
     },
 
+    changeOsc: function (val) {
+      _oscTypeIdx = (_oscTypeIdx + val) % 4;
+      if (_oscTypeIdx < 0) { _oscTypeIdx = 4 + _oscTypeIdx; }
+      _toneOptions.oscType = _oscTypes[_oscTypeIdx];
+    },
+
     addChangeHandler: function (callback) {
       this.on(CHANGE_EVENT, callback);
     },
@@ -31,6 +41,11 @@
       switch (payload.actionType) {
         case ToneConstants.GAIN_CHANGED:
           ToneStore.changeGain(payload.val);
+          ToneStore.emit(CHANGE_EVENT);
+          break;
+
+        case ToneConstants.OSC_CHANGED:
+          ToneStore.changeOsc(payload.val);
           ToneStore.emit(CHANGE_EVENT);
           break;
       }

@@ -106,24 +106,26 @@ button {
 .keyboard-options button {
   background: #C5C0BC;
   color: #70AF9E;
-  padding: 0 10px;
+  text-align: center;
+  width: 100%;
   font-size: 24px;
 }
 
 .gain-list {
-  width: 30px;
+  width: 50px;
 }
 
 .keyboard-options h2 {
   text-align: center;
   font-weight: bold;
   color: black;
-  padding: 5px 0;
+  width: 100%;
 }
 
-.keyboard-options {
+.options-list {
   position: absolute;
   top: 115px;
+  width: 500px;
 }
 
 .keyboard-options h3 {
@@ -132,6 +134,16 @@ button {
   color: #D7D751;
   font-size: 24px;
   font-weight: bold;
-  width: 30px;
-  padding: 5px 7px;
+  width: 100%;
+}
+
+.gain-options {
+  float: left;
+  margin: 5px 10px 5px 0;
+}
+
+.osc-options {
+  margin: 5px 0;
+  float: left;
+  width: 120px;
 }

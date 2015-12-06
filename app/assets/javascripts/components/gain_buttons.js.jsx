@@ -27,7 +27,7 @@ window.GainButtons = React.createClass({
 
   render: function () {
     return (
-      <div className="keyboard-options group">
+      <div className="keyboard-options">
         <ul className="gain-options">
           <li><h2>GAIN</h2></li>
           <li>
