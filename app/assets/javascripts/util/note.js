@@ -5,7 +5,7 @@
   var Note = window.Note = function (freq) {
     var createOscillator = function (freq) {
       var osc = ctx.createOscillator();
-      osc.type = "square";
+      osc.type = ToneStore.toneOptions("sawtooth");
       osc.frequency.value = freq;
       osc.detune.value = 0;
       osc.start(ctx.currentTime);
@@ -26,7 +26,7 @@
   };
 
   Note.prototype.start = function () {
-    this.gainNode.gain.value = 0.3;
+    this.gainNode.gain.value = ToneStore.toneOptions("gain");
   };
 
   Note.prototype.stop = function () {

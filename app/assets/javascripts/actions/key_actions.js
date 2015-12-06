@@ -1,4 +1,4 @@
-var KeyActions = {
+window.KeyActions = {
   keyPressed: function (key) {
     AppDispatcher.dispatch({
       eventType: "CREATE_NOTE",

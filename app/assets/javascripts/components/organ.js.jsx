@@ -13,6 +13,7 @@ var Organ = React.createClass({
     return (
       <div>
         <ul className="keyboard group">
+          <li><GainButtons /></li>
           { keys }
         </ul>
         <Recorder />

@@ -8,6 +8,19 @@ var Jukebox = React.createClass({
     this.setState({ tracks: TrackStore.all() });
   },
 
+  componentDidMount: function () {
+    TrackApiUtil.fetch();
+    TrackStore.addChangeHandler(this._onChange);
+  },
+
+  componentWillUnmount: function () {
+    TrackStore.removeChangeHandler(this._onChange);
+  },
+
+  _onChange: function () {
+    this.setState({ tracks: TrackStore.all() });
+  },
+
   render: function () {
     var tracks = this.state.tracks.map(function (track, idx) {
       return (

@@ -5,9 +5,7 @@ var TrackApiUtil = window.TrackApiUtil = {
       type: 'GET',
       dataType: 'json',
       success: function(tracks) {
-        tracks.forEach(function (track) {
-          TrackStore.addTrack(track);
-        });
+        TrackActions.tracksReceived(tracks)
       }
     });
   },
