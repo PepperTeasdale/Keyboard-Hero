@@ -20,7 +20,7 @@
     };
 
     var createConvolver = function () {
-      var buffer = ctx.createBuffer(2, 88200, 44100);
+      var buffer = ctx.createBuffer(2, 22050, 44100);
       var convolver = ctx.createConvolver();
       convolver.buffer = buffer;
       return convolver;
