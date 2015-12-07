@@ -1,8 +1,17 @@
 
 (function (root) {
+  var CHANGE_EVENT = "change";
   var _keys = [];
 
   root.KeyStore = $.extend({}, EventEmitter.prototype, {
+    addChangeHandler: function (callback) {
+      this.on(CHANGE_EVENT, callback);
+    },
+
+    removeChangeHandler: function (callback) {
+      this.removeListener(CHANGE_EVENT, callback);
+    },
+
     all: function() {
       return _keys.slice();
     },

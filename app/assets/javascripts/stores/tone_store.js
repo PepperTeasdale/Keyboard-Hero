@@ -8,7 +8,8 @@
 
   var _toneOptions = {
     oscType: _oscTypes[_oscTypeIdx],
-    gain: 0.3
+    gain: 0.3,
+    octave: 4
   };
 
   root.ToneStore = $.extend({}, EventEmitter.prototype, {
@@ -29,6 +30,26 @@
       _toneOptions.oscType = _oscTypes[_oscTypeIdx];
     },
 
+    changeOctave: function (val) {
+      var octave = _toneOptions.octave;
+      octave += val;
+      if (octave < 3) {
+        octave = 3;
+      } else if (octave > 5) {
+        octave = 5;
+      }
+      _toneOptions.octave = octave;
+    },
+
+    updateKeyMappings: function () {
+      var counter = 0;
+      for (var key in window.KEY_MAPPING) {
+        var octave = (counter < 12 ? _toneOptions.octave : _toneOptions.octave + 1);
+        KEY_MAPPING[key] = KEY_MAPPING[key].replace(/\d/, octave);
+        counter += 1;
+      }
+    },
+
     addChangeHandler: function (callback) {
       this.on(CHANGE_EVENT, callback);
     },
@@ -46,6 +67,12 @@
 
         case ToneConstants.OSC_CHANGED:
           ToneStore.changeOsc(payload.val);
+          ToneStore.emit(CHANGE_EVENT);
+          break;
+
+        case ToneConstants.OCTAVE_CHANGED:
+          ToneStore.changeOctave(payload.val);
+          ToneStore.updateKeyMappings();
           ToneStore.emit(CHANGE_EVENT);
           break;
       }
