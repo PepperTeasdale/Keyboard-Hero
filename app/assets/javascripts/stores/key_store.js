@@ -29,14 +29,14 @@
 
     dispatcherID: AppDispatcher.register(function (payload) {
       switch (payload.eventType) {
-        case 'CREATE_NOTE':
+        case 'KEY_DOWN':
           KeyStore.addNote(payload.noteName);
-          KeyStore.emit('change');
+          KeyStore.emit(CHANGE_EVENT);
           break;
 
-        case 'REMOVE_NOTE':
+        case 'KEY_UP':
           KeyStore.removeNote(payload.noteName);
-          KeyStore.emit('change');
+          KeyStore.emit(CHANGE_EVENT);
           break;
       }
     })

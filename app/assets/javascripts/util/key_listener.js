@@ -2,7 +2,13 @@
   var Listener = root.Listener = {};
 
   Listener.handleKeyUp = function (event) {
-    makeKeyHandler("keyUnpressed")(event);
+    if (event.keyCode === 88) {
+      ToneActions.changeOctave(1);
+    } else if (event.keyCode === 90) {
+      ToneActions.changeOctave(-1);
+    } else {
+      makeKeyHandler("keyUnpressed")(event);
+    }
   };
 
   Listener.handleKeyDown = function (event) {

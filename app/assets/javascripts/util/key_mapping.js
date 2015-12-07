@@ -15,5 +15,5 @@ window.KEY_MAPPING = {
   "O": "Db" + (ToneStore.toneOptions("octave") + 1),
   "L": "D" + (ToneStore.toneOptions("octave") + 1),
   "P": "Eb" + (ToneStore.toneOptions("octave") + 1),
-  ";": "E" + (ToneStore.toneOptions("octave") + 1)
+  ";": "E" + (ToneStore.toneOptions("octave") + 1),
 };

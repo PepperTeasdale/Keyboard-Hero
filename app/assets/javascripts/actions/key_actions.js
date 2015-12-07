@@ -1,14 +1,14 @@
 window.KeyActions = {
   keyPressed: function (key) {
     AppDispatcher.dispatch({
-      eventType: "CREATE_NOTE",
+      eventType: "KEY_DOWN",
       noteName: key
     });
   },
 
   keyUnpressed: function (key) {
     AppDispatcher.dispatch({
-      eventType: "REMOVE_NOTE",
+      eventType: "KEY_UP",
       noteName: key
     });
   }
