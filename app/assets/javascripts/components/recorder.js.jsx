@@ -3,8 +3,20 @@ var Recorder = React.createClass({
     KeyStore.on("change", this.addNotes);
     return {
       isRecording: false,
-      track: new Track({name: ""})
+      track: new Track({ name: "" })
     };
+  },
+
+  componentDidMount: function () {
+    TrackStore.addChangeHandler(this._onChange);
+  },
+
+  componentWillUnmount: function () {
+    TrackStore.addChangeHandler(this._onChange);
+  },
+
+  _onChange: function () {
+    this.setState({ isRecording: TrackStore.recording() });
   },
 
   addNotes: function () {
@@ -14,13 +26,11 @@ var Recorder = React.createClass({
   },
 
   startRecording: function () {
-    this.setState({isRecording: true});
     this.state.track.startRecording();
   },
 
   stopRecording: function () {
     this.state.track.stopRecording();
-    this.setState({isRecording: false});
   },
 
   play: function () {
@@ -28,12 +38,26 @@ var Recorder = React.createClass({
   },
 
   render: function () {
+    var className = (TrackStore.recording() ? " recording" : "")
     return (
-      <div>
-        <button onClick={this.startRecording}>Start Recording</button>
-        <button onClick={this.stopRecording}>Stop Recording</button>
-        <button onClick={this.play}>Play</button>
-        <SaveButton track={this.state.track} />
+      <div className="recorder">
+        <button onClick={ this.startRecording }
+          className={ "record-button recorder-button" + className }>
+          ⬤
+        </button>
+        <button
+          onClick={ this.stopRecording }
+          className="recorder-button"
+        >
+          &#x2b1b;
+        </button>
+        <button
+          onClick={ this.play }
+          className="recorder-button"
+        >
+          ►
+        </button>
+        <SaveButton track={ this.state.track } />
       </div>
     );
   }

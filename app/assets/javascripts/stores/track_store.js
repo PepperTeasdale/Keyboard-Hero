@@ -2,6 +2,7 @@
 
   var CHANGE_EVENT = "change";
   var _tracks = [];
+  var _recording = false;
 
   var TrackStore = root.TrackStore = $.extend({}, EventEmitter.prototype, {
     addChangeHandler: function (callback) {
@@ -26,11 +27,25 @@
       this.emit("change");
     },
 
+    recording: function () {
+      return _recording;
+    },
+
     dispatcherId: AppDispatcher.register(function (payload) {
       switch (payload.actionType) {
         case TrackConstants.TRACKS_RECEIVED:
-          _tracks = payload.tracks
-          TrackStore.emit(CHANGE_EVENT)
+          _tracks = payload.tracks;
+          TrackStore.emit(CHANGE_EVENT);
+          break;
+
+        case TrackConstants.RECORDING_STARTED:
+          _recording = true;
+          TrackStore.emit(CHANGE_EVENT);
+          break;
+
+        case TrackConstants.RECORDING_STOPPED:
+          _recording = false;
+          TrackStore.emit(CHANGE_EVENT);
           break;
       }
     })

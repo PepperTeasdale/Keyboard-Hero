@@ -6,6 +6,7 @@ var Track = window.Track = function (attrs) {
 Track.prototype.startRecording = function () {
   this.roll = [];
   this.startTime = Date.now();
+  TrackActions.startRecording();
 };
 
 Track.prototype.addNotes = function (notes) {
@@ -21,6 +22,7 @@ Track.prototype.saveTrack = function () {
 
 Track.prototype.stopRecording = function () {
   this.addNotes([]);
+  TrackActions.stopRecording();
 };
 
 Track.prototype.play = function () {

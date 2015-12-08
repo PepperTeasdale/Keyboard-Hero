@@ -32,6 +32,7 @@ var Organ = React.createClass({
 
     return (
       <div>
+        <Recorder />
         <ul className="keyboard group">
           <ul className="options-list group">
             <li><GainButtons /></li>
@@ -39,7 +40,6 @@ var Organ = React.createClass({
           </ul>
           { keys }
         </ul>
-        <Recorder />
         <Jukebox />
       </div>
     );

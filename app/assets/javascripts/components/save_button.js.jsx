@@ -24,8 +24,11 @@ var SaveButton = React.createClass({
           onFocus={Listener.turnOff}
           onBlur={Listener.turnOn}
           onChange={this.changeText}
+          placeholder="Track title"
         />
-        <button onClick={this.save}>Save</button>
+      <button className="save-button" onClick={this.save}>
+          Save
+        </button>
       </div>
     );
   }

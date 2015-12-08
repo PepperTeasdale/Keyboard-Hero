@@ -20,7 +20,7 @@ var Key = React.createClass({
     this.note = new Note(freq);
     KeyStore.addChangeHandler(this.keyChanged);
     if (KeyStore.all().indexOf( this.state.noteName) !== -1 ) {
-      note.start();
+      this.note.start();
       this.setState({ active: true });
     }
   },

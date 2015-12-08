@@ -16,10 +16,11 @@
 
 /* RESET */
 
-html, body, ul, li, div, button, h3, h2 {
+html, body, ul, li, div, button, h3, h2, input {
   margin: 0;
   border: 0;
   padding: 0;
+  outline: none;
 
   font: inherit;
   font-family: sans-serif;
@@ -49,12 +50,11 @@ button {
 
 .keyboard {
   display: block;
-  margin: 100px auto;
+  margin: 0 auto;
   width: 600px;
   border: 75px solid #D97537;
   border-bottom: 0;
   border-top: 150px solid #D97537;
-  border-radius: 5px;
 }
 
 .key-container {
@@ -124,7 +124,7 @@ button {
 
 .options-list {
   position: absolute;
-  top: 115px;
+  top: 375px;
   width: 500px;
 }
 
@@ -146,4 +146,54 @@ button {
   margin: 5px 0;
   float: left;
   width: 120px;
+}
+
+.recorder {
+  width: 600px;
+  background: black;
+  margin: 100px auto 0;
+  border: 75px solid #D97537;
+  border-bottom: 0;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  color: #D7D751;
+  text-align: center;
+}
+
+.recorder-button {
+  background: #C5C0BC;
+  color: #70AF9E;
+  font-size: 24px;
+  padding: 10px;
+  margin: 20px 30px;
+  height: 65px;
+  width: 75px;
+  text-align: center;
+}
+
+input {
+  outline: 1px solid #D7D751;
+  margin: 20px 0 20px 20px;
+  width: 250px;
+  padding: 10px;
+  color: black;
+  background: white;
+}
+
+button.save-button {
+  margin: 20px 0;
+  background: #C5C0BC;
+  color: #70AF9E;
+  font-size: 18px;
+  padding: 8px 10px 11px;
+}
+
+button.record-button {
+  color: red;
+  font-weight: bold;
+}
+
+.record-button.recording {
+  background: black;
+  border: 1px solid red;
 }
