@@ -32,8 +32,8 @@ var TrackApiUtil = window.TrackApiUtil = {
       url: '/api/tracks/' + track_id,
       type: 'DELETE',
       dataType: 'json',
-      success: function (track) {
-        TrackStore.destroy(track);
+      success: function () {
+        TrackStore.destroy(track_id);
       }
     });
   }

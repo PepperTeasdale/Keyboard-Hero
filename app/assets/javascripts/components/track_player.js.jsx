@@ -9,11 +9,11 @@ var TrackPlayer = React.createClass({
 
   render: function() {
     return (
-      <div>
+      <li className="group">
         <span>{this.props.track.name}</span>
-        <button className="play" onClick={this.play}>Play</button>
-        <button className="delete" onClick={this.delete}>Delete</button>
-      </div>
+        <button className="play" onClick={ this.play }>Play</button>
+        <button className="delete" onClick={ this.delete }>Delete</button>
+      </li>
     );
   }
 });

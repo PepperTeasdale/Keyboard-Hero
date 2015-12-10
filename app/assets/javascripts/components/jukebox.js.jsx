@@ -22,18 +22,22 @@ var Jukebox = React.createClass({
   },
 
   render: function () {
-    var tracks = this.state.tracks.map(function (track, idx) {
+    var tracks = this.state.tracks.map(function (track) {
       return (
-        <li key={track.id}>
-          <TrackPlayer track={track} />
-        </li>
+        <TrackPlayer track={ track } key={ track.id } />
       );
     });
 
     return (
-      <ul className="jukebox">
-        {tracks}
-      </ul>
+      <div className="jukebox">
+        <h1>Jukebox</h1>
+        <ul className="playlist">
+          <li className="group">
+            <span>Title</span>
+          </li>
+          { tracks }
+        </ul>
+      </div>
     );
   }
 });

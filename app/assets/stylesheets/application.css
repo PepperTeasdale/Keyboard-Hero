@@ -197,3 +197,39 @@ button.record-button {
   background: black;
   border: 1px solid red;
 }
+
+.jukebox {
+  position: absolute;
+  top: 100px;
+  left: 50px;
+  width: 240px;
+  background: #D97537;
+  border-radius: 5px;
+}
+
+.jukebox h1 {
+  text-align: center;
+  font-family: 'Fugaz One';
+  color: black;
+}
+
+.jukebox li {
+  margin: 20px 10px;
+  border-bottom: 1px dotted black;
+}
+
+.jukebox span {
+  display: block;
+  margin-top: 10px;
+  float: left;
+  width: 40%;
+}
+
+.jukebox button {
+  display: block;
+  float: right;
+  background: white;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+}

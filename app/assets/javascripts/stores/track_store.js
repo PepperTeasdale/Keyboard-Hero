@@ -22,8 +22,14 @@
       return _tracks;
     },
 
-    destroy: function (track) {
-      _tracks.splice(_tracks.indexOf(track), 1);
+    find: function (id) {
+      for (var i = 0; i < _tracks.length; i++) {
+        if (_tracks[i].id == id) { return i; }
+      }
+    },
+
+    destroy: function (trackId) {
+      _tracks.splice(this.find(trackId), 1);fhk
       this.emit("change");
     },
 
