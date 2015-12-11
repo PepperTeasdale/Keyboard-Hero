@@ -16,5 +16,12 @@ window.TrackActions = {
     AppDispatcher.dispatch({
       actionType: TrackConstants.RECORDING_STOPPED
     });
+  },
+
+  destroy: function (trackId) {
+    AppDispatcher.dispatch({
+      actionType: TrackConstants.TRACK_DELETED,
+      trackId: trackId
+    })
   }
 };

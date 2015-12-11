@@ -29,8 +29,7 @@
     },
 
     destroy: function (trackId) {
-      _tracks.splice(this.find(trackId), 1);fhk
-      this.emit("change");
+      _tracks.splice(this.find(trackId), 1);
     },
 
     recording: function () {
@@ -51,6 +50,11 @@
 
         case TrackConstants.RECORDING_STOPPED:
           _recording = false;
+          TrackStore.emit(CHANGE_EVENT);
+          break;
+
+        case TrackConstants.TRACK_DELETED:
+          TrackStore.destroy(payload.trackId);
           TrackStore.emit(CHANGE_EVENT);
           break;
       }

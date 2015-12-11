@@ -33,7 +33,7 @@ var TrackApiUtil = window.TrackApiUtil = {
       type: 'DELETE',
       dataType: 'json',
       success: function () {
-        TrackStore.destroy(track_id);
+        TrackActions.destroy(track_id);
       }
     });
   }
