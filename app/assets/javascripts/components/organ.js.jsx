@@ -41,6 +41,17 @@ var Organ = React.createClass({
           { keys }
         </ul>
         <Jukebox />
+        <section className="instructions">
+          <h1>Instructions</h1>
+          <p>
+            You can play the keyboard with your fingers on the home keys. The middle
+            row ("a" - ";") represents the white keys and you can the black keys on adjacent keys a row up (eg "w" = Db, "e" = Eb).
+          </p>
+          <p>
+            To move down an octave, type "z" and to move up an octave, type "x". Recording
+            and playing back tracks is self-explanatory. Have fun!
+          </p>
+        </section>
       </div>
     );
   }

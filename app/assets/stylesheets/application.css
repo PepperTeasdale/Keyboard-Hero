@@ -207,22 +207,24 @@ button.record-button {
   border-radius: 5px;
 }
 
-.jukebox h1 {
+h1 {
   text-align: center;
   font-family: 'Fugaz One';
-  color: black;
+  color: white;
 }
 
 .jukebox li {
-  margin: 20px 10px;
-  border-bottom: 1px dotted black;
+  margin: 20px;
+  border-bottom: 1px dotted white;
 }
 
 .jukebox span {
+  font-weight: lighter;
   display: block;
   margin-top: 10px;
   float: left;
   width: 40%;
+  color: white;
 }
 
 .jukebox button {
@@ -232,4 +234,20 @@ button.record-button {
   padding: 5px;
   margin: 5px;
   border-radius: 5px;
+}
+
+.instructions {
+  position: absolute;
+  top: 100px;
+  right: 50px;
+  width: 240px;
+  background: #D97537;
+  border-radius: 5px;
+}
+
+.instructions p {
+  font-weight: lighter;
+  color: white;
+  line-height: 1.333;
+  margin: 20px;
 }
