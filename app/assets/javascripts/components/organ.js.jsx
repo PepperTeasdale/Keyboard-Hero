@@ -45,7 +45,7 @@ var Organ = React.createClass({
           <h1>Instructions</h1>
           <p>
             You can play the keyboard with your fingers on the home keys. The middle
-            row ("a" - ";") represents the white keys and you can the black keys on adjacent keys a row up (eg "w" = Db, "e" = Eb).
+            row ("a" - ";") represents the white keys and you can find the black keys on adjacent keys a row up (eg "w" = Db, "e" = Eb).
           </p>
           <p>
             To move down an octave, type "z" and to move up an octave, type "x". Recording

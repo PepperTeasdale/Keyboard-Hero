@@ -1,10 +1,12 @@
 var Track = window.Track = function (attrs) {
   this.name = attrs.name;
   this.roll = attrs.roll || [];
+  this.octave = null;
 };
 
 Track.prototype.startRecording = function () {
   this.roll = [];
+  this.octave = ToneStore.toneOptions("octave");
   this.startTime = Date.now();
   TrackActions.startRecording();
 };

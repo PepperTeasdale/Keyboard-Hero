@@ -75,6 +75,11 @@
           ToneStore.updateKeyMappings();
           ToneStore.emit(CHANGE_EVENT);
           break;
+
+        case ToneConstants.OCTAVE_SET:
+          _toneOptions.octave = payload.octave;
+          ToneStore.updateKeyMappings();
+          ToneStore.emit(CHANGE_EVENT);
       }
     })
   });

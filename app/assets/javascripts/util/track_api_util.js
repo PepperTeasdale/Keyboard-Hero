@@ -11,7 +11,11 @@ var TrackApiUtil = window.TrackApiUtil = {
   },
 
   saveTrack: function (track) {
-    var trackObj = { track: { name: track.name, roll: JSON.stringify(track.roll) } };
+    var trackObj = {
+      track: {
+        name: track.name,
+        octave: track.octave,
+        roll: JSON.stringify(track.roll) } };
 
 
     $.ajax({

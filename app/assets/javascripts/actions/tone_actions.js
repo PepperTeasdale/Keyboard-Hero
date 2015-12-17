@@ -17,6 +17,13 @@ window.ToneActions = {
     AppDispatcher.dispatch({
       actionType: ToneConstants.OCTAVE_CHANGED,
       val: val
-    })
+    });
+  },
+
+  setOctave: function(octave) {
+    AppDispatcher.dispatch({
+      actionType: ToneConstants.OCTAVE_SET,
+      octave: octave
+    });
   }
 }

@@ -1,5 +1,6 @@
 var TrackPlayer = React.createClass({
   play: function () {
+    ToneActions.setOctave(this.props.track.octave);
     Track.prototype.play.call(this.props.track);
   },
 
