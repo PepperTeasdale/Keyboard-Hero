@@ -95,11 +95,11 @@ body {
   width: 40px;
   margin: 0 14px;
   background: black;
-  box-shadow: -5px 0 5px black;
+  box-shadow: 0px 5px 5px black;
 }
 
 .black.active {
-  box-shadow: -2px 0px 2px black;
+  box-shadow: 0px 2px 2px black;
 }
 
 .metronome-body {
@@ -216,6 +216,7 @@ button.record-button {
   width: 240px;
   background: #D97537;
   border-radius: 5px;
+  box-shadow: 0 0 20px white;
 }
 
 h1 {
@@ -254,6 +255,7 @@ h1 {
   width: 240px;
   background: #D97537;
   border-radius: 5px;
+  box-shadow: 0 0 20px white;
 }
 
 .instructions p {
