@@ -43,6 +43,8 @@ var Key = React.createClass({
 
     if (this.props.noteName[1] === "b") {
       className += " black";
+    } else {
+      className += " white";
     }
 
     return (

@@ -76,6 +76,10 @@ button {
   border-bottom-right-radius: 4px;
 }
 
+.white.active {
+  box-shadow: inset 0 4px 5px black;
+}
+
 .black {
   position: absolute;
   z-index: 1;
@@ -84,11 +88,11 @@ button {
   width: 40px;
   margin: 0 14px;
   background: black;
-  color: white;
+  box-shadow: -5px 0 5px black;
 }
 
-.active {
-  background: #ccc;
+.black.active {
+  box-shadow: -2px 0px 2px black;
 }
 
 .metronome-body {

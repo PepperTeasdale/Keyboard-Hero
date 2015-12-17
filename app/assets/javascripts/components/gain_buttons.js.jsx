@@ -18,10 +18,12 @@ window.GainButtons = React.createClass({
   },
 
   raiseGain: function () {
+    KeyActions.stopAllNotes();
     ToneActions.changeGain(.1);
   },
 
   lowerGain: function () {
+    KeyActions.stopAllNotes();
     ToneActions.changeGain(-.1)
   },
 

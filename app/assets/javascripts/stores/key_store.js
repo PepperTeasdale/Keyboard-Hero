@@ -27,17 +27,25 @@
       }.bind(this));
     },
 
+    removeAllNotes: function () {
+      _keys = [];
+    },
+
     dispatcherID: AppDispatcher.register(function (payload) {
       switch (payload.eventType) {
-        case 'KEY_DOWN':
+        case KeyConstants.KEY_DOWN:
           KeyStore.addNote(payload.noteName);
           KeyStore.emit(CHANGE_EVENT);
           break;
 
-        case 'KEY_UP':
+        case KeyConstants.KEY_UP:
           KeyStore.removeNote(payload.noteName);
           KeyStore.emit(CHANGE_EVENT);
           break;
+
+        case KeyConstants.STOP_ALL_NOTES:
+          KeyStore.removeAllNotes();
+          KeyStore.emit(CHANGE_EVENT);
       }
     })
   });

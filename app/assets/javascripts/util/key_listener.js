@@ -3,8 +3,10 @@
 
   Listener.handleKeyUp = function (event) {
     if (event.keyCode === 88) {
+      KeyActions.stopAllNotes();
       ToneActions.changeOctave(1);
     } else if (event.keyCode === 90) {
+      KeyActions.stopAllNotes();
       ToneActions.changeOctave(-1);
     } else {
       makeKeyHandler("keyUnpressed")(event);

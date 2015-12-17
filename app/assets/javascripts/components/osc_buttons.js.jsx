@@ -19,10 +19,12 @@
     },
 
     indexUp: function () {
+      KeyActions.stopAllNotes();
       ToneActions.changeOsc(1);
     },
 
     indexDown: function () {
+      KeyActions.stopAllNotes();
       ToneActions.changeOsc(-1);
     },
 
