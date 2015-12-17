@@ -27,7 +27,6 @@ var TrackApiUtil = window.TrackApiUtil = {
         TrackStore.addTrack(track);
       },
       error: function (data) {
-        console.log(data);
       }
     });
   },
